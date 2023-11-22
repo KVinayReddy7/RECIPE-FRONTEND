@@ -1,0 +1,119 @@
+.bgGreen {
+    background-color: #000000 !important;
+    padding: 2%;
+}
+.modal-body{
+  background-color: black !important;
+}
+body{
+  background-color: black !important;
+}
+.textColor {
+  color: goldenrod;
+}
+.popupBgColor {
+  background-color:goldenrod
+}
+.card{
+  --bs-card-bg: black !important;
+}
+.card.shadow{
+  background-color: #000000 !important;
+  border-style: solid;
+  border-color: goldenrod;
+}
+button.borderColor{
+  /* border-style: solid; */
+  border-color: goldenrod;
+  color: goldenrod;
+}
+button.borderColor:hover {
+  color: black;
+  background-color: goldenrod;
+  border-color: goldenrod;
+}
+button.borderColor.delete:hover {
+  color: white;
+  background-color: red;
+  border-color: goldenrod;
+  border-style:solid ;
+}
+button.borderColor.update:hover {
+  color: white;
+  background-color: dodgerblue;
+  border-color:goldenrod;
+  border-style:solid ;
+}
+button.borderColor.view:hover {
+  color: black;
+  background-color: green;
+  border-color:goldenrod;
+  border-style:solid ;
+}
+button.borderColor.logout:hover {
+  color: white;
+  background-color: red;
+  border-color:goldenrod;
+  border-style:solid ;
+}
+::placeholder {
+  color: goldenrod !important;
+  opacity: 1 !important;
+}
+
+::-ms-input-placeholder {
+  color: goldenrod !important;
+}
+input.form-control{
+  background-color: black;
+  color: goldenrod;
+}
+input.form-control:hover{
+  background-color: black;
+  color: goldenrod;
+}
+input.form-control:not( :hover ){ 
+  background-color: black;
+  color: goldenrod; 
+}
+textarea.form-control{
+  background-color: black;
+  color: goldenrod;
+}
+textarea.form-control:hover{
+  background-color: black;
+  color: goldenrod;
+}
+textarea.form-control:not( :hover ){
+  background-color: black;
+  color: goldenrod;
+}
+
+/* file */
+label.label input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+.label {
+  cursor: pointer;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 5px;
+  background: black;
+  display: inline-block;
+  color: goldenrod;
+}
+.label:hover {
+  background: goldenrod;
+  color: black;
+}
+.label:active {
+  background: #fefffe;
+}
+.label:invalid + span {
+  color: goldenrod;
+}
+.label:valid + span {
+  color: #ffffff;
+} 
