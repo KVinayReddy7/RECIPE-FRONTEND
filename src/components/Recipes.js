@@ -303,9 +303,9 @@ export default function Recipes(){
                           <h5 className="text-uppercase textColor">{recipe.recipeName}</h5>
                           {/* <p style={{textAlign:"right"}} className="card-text">{recipe.description}</p>
                          {recipe.ingredients?.map((ing)=>( <p style={{textAlign:"right"}} className="card-text">{ing}</p>))} */}
-                          {role ? <button  className='btn borderColor'onClick={() =>{deleteRecipe(recipe._id)}}>Delete</button> : null}
-                          {role ? <button className='btn borderColor m-1'onClick={() =>{updateRecipeId(recipe._id)}}>Update</button> : null}
-                           <button className='btn borderColor 'onClick={() =>{ViewRecipeId(recipe._id)}}>View</button>
+                          {role ? <button  className='btn borderColor delete'onClick={() =>{deleteRecipe(recipe._id)}}>Delete</button> : null}
+                          {role ? <button className='btn borderColor m-1 update'onClick={() =>{updateRecipeId(recipe._id)}}>Update</button> : null}
+                           <button className='btn borderColor view'onClick={() =>{ViewRecipeId(recipe._id)}}>View</button>
                         </div>
                   </div>
                 ))
