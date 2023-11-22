@@ -298,7 +298,8 @@ export default function Recipes(){
             {role ? <div className="text-end p-3"> <button className="btn borderColor" onClick={addrecipe}><b>Add Recipe</b></button> </div> : null}
                 {searchRecipe ? searchRecipe.map((recipe, index) => (
                   <div className="col-3 card" style={{margin: "2.5rem"}} >
-                        <div className="card-body">
+                    <div className="card shadow">    
+                    <div className="card-body">
                         <img src={recipe.image} className="card-img-top" alt="..." />
                           <h5 className="text-uppercase textColor">{recipe.recipeName}</h5>
                           {/* <p style={{textAlign:"right"}} className="card-text">{recipe.description}</p>
@@ -308,6 +309,7 @@ export default function Recipes(){
                            <button className='btn borderColor view'onClick={() =>{ViewRecipeId(recipe._id)}}>View</button>
                         </div>
                   </div>
+                              </div>
                 ))
                 :
                 recipes?.map((data, index)=> (
