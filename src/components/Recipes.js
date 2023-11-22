@@ -8,6 +8,7 @@ import  Modal  from "react-bootstrap/Modal";
 import  Form from "react-bootstrap/Form";
 import FormGroup from "react-bootstrap/esm/FormGroup";
 import logo from "../logo2.png"
+import { BASE_URL } from "../helper/helper";
 import "../styles/style.css";
 export default function Recipes(){
     const [search, setSearch] = useState();
@@ -49,7 +50,7 @@ export default function Recipes(){
     function searchItem(e) {
       setSearch(e.target.value);
         axios.get(
-            `http://localhost:5500/recipe/search/${search}`,
+            `${BASE_URL}/recipe/search/${search}`,
             {
                 headers: {
                     Accept: "application/json, text/plain, */*",
@@ -73,7 +74,7 @@ export default function Recipes(){
             if(userdetails.data.data.role === "admin"){
                 setRole(true);
             }
-             axios.get("http://localhost:5500/recipe/getrecipe",
+             axios.get(`${BASE_URL}/recipe/getrecipe`,
             {
                 headers: {
                     Accept: "application/json, text/plain, */*",
@@ -90,7 +91,7 @@ export default function Recipes(){
         }
     })
     const deleteRecipe = ((id) => {
-        axios.delete(`http://localhost:5500/recipe/deleteRecipe/${id}`,{
+        axios.delete(`${BASE_URL}/recipe/deleteRecipe/${id}`,{
             headers: {
                 Accept: "application/json, text/plain, */*",
                 "Content-Type": "application/json",
@@ -106,7 +107,7 @@ export default function Recipes(){
 
     //update Recipe Id
     const updateRecipeId = async (id) => {
-      await axios.get(`http://localhost:5500/recipe/${id}`,
+      await axios.get(`${BASE_URL}/recipe/${id}`,
       {
         headers: {
         Accept: "application/json, text/plain, */*",
@@ -161,7 +162,7 @@ export default function Recipes(){
         console.log("ingredient",ingredient);
         var ingre = await ingredient.replace(/,/g, ',');
         ingre = await ingre.split(",");
-          await axios.put(`http://localhost:5500/recipe/update/${oneRecipe._id}`, 
+          await axios.put(`${BASE_URL}/recipe/update/${oneRecipe._id}`, 
           { 
             "recipeName":oneRecipe.recipeName, 
             "description": oneRecipe.description, 
@@ -207,7 +208,7 @@ export default function Recipes(){
       }; 
       //view
       const ViewRecipeId = ((id) => {
-        axios.get(`http://localhost:5500/recipe/${id}`,{
+        axios.get(`${BASE_URL}/recipe/${id}`,{
             headers: {
                 Accept: "application/json, text/plain, */*",
                 "Content-Type": "application/json",
@@ -231,7 +232,7 @@ export default function Recipes(){
        ingre = ingre.split(",");
       console.log("OneRecipe:", oneRecipe.recipeName);
       console.log("Ingredient: ",ingre);
-        await axios.post("http://localhost:5500/recipe/addRecipe", 
+        await axios.post(`${BASE_URL}/recipe/addRecipe`, 
         { 
           "recipeName":oneRecipe.recipeName, 
             "description": oneRecipe.description, 

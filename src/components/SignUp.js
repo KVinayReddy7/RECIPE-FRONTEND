@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import "./style.css";
+import { BASE_URL } from "../helper/helper";
 
 function SignUp() {
   const [name, setName] = useState();
@@ -20,7 +21,7 @@ function SignUp() {
     // console.log("email:", email);
     // console.log("password: ", password)
    
-      await axios.post("http://localhost:5500/users/signup", 
+      await axios.post(`${BASE_URL}/users/signup`, 
       { 
         "name":name, 
         "email": email, 

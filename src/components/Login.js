@@ -2,6 +2,7 @@ import React, { useEffect, useState} from "react";
 // import "./style.css";
 import axios from "axios";
 import { useNavigate} from "react-router-dom";
+import { BASE_URL } from "../helper/helper";
 
 function LogIn() {
   const [email, setEmail] = useState();
@@ -18,7 +19,7 @@ function LogIn() {
   let handleSubmit = (event) => {
     const obj = { "email":email, "password": password };
     // console.log("details", obj)
-    const url = "http://localhost:5500/users/login";
+    const url = `${BASE_URL}/users/login`;
     axios
       .post(url, obj)
       .then((res) => {
